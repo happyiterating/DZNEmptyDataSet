@@ -990,8 +990,12 @@ Class dzn_baseClassToSwizzleForTarget(id target)
             [subviewStrings addObject:@"button"];
             views[[subviewStrings lastObject]] = _button;
             
-            [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(padding@750)-[button(>=0)]-(padding@750)-|"
-                                                                                     options:0 metrics:metrics views:views]];
+            _button.layer.borderColor = [UIColor colorWithRed:132/255.0 green:133/255.0 blue:135/255.0 alpha:1].CGColor;
+            _button.layer.cornerRadius = 2;
+            _button.layer.masksToBounds = YES;
+            _button.layer.borderWidth = 0.5;
+            [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"[button(100)]" options:0 metrics:nil views:views]];
+            [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_button attribute:NSLayoutAttributeCenterX relatedBy:NSLayoutRelationEqual toItem:self.contentView attribute:NSLayoutAttributeCenterX multiplier:1 constant:0]];
         }
         // or removes from its superview
         else {
