@@ -90,36 +90,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (nullable CAAnimation *)imageAnimationForEmptyDataSet:(UIScrollView *)scrollView;
 
-/**
- Asks the data source for the title to be used for the specified button state.
- The dataset uses a fixed font style by default, if no attributes are set. If you want a different font style, return a attributed string.
+- (void)configureButton:(UIButton*)button;
  
- @param scrollView A scrollView subclass object informing the data source.
- @param state The state that uses the specified title. The possible values are described in UIControlState.
- @return An attributed string for the dataset button title, combining font, text color, text pararaph style, etc.
- */
-- (nullable NSAttributedString *)buttonTitleForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state;
-
-/**
- Asks the data source for the image to be used for the specified button state.
- This method will override buttonTitleForEmptyDataSet:forState: and present the image only without any text.
- 
- @param scrollView A scrollView subclass object informing the data source.
- @param state The state that uses the specified title. The possible values are described in UIControlState.
- @return An image for the dataset button imageview.
- */
-- (nullable UIImage *)buttonImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state;
-
-/**
- Asks the data source for a background image to be used for the specified button state.
- There is no default style for this call.
- 
- @param scrollView A scrollView subclass informing the data source.
- @param state The state that uses the specified image. The values are described in UIControlState.
- @return An attributed string for the dataset button title, combining font, text color, text pararaph style, etc.
- */
-- (nullable UIImage *)buttonBackgroundImageForEmptyDataSet:(UIScrollView *)scrollView forState:(UIControlState)state;
-
 /**
  Asks the data source for the background color of the dataset. Default is clear color.
  
